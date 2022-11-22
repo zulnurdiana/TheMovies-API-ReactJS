@@ -15,6 +15,7 @@ const App = () => {
   const searchMovies = async(q)=>{
     if(q.length>3){
       let getMovie = await cariMovies(q);
+      if(getMovie.results.poster_path === null) return;
       setListMovies(getMovie.results)
     }
   }
